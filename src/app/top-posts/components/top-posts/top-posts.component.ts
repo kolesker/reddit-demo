@@ -6,7 +6,6 @@ import { Component } from '@angular/core';
   templateUrl: 'top-posts.component.html',
   styleUrls: ['./top-posts.component.scss']
 })
-
 export class TopPostsComponent {
   constructor() { }
 }

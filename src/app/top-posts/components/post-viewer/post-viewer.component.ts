@@ -6,7 +6,6 @@ import { Component } from '@angular/core';
   templateUrl: 'post-viewer.component.html',
   styleUrls: ['./post-viewer.component.scss']
 })
-
 export class PostViewerComponent {
   constructor() { }
 }

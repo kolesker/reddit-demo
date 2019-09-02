@@ -8,7 +8,6 @@ import { Post } from 'src/app/core/models';
   templateUrl: 'post.component.html',
   styleUrls: ['./post.component.scss']
 })
-
 export class PostComponent {
 
   @Input() public post: Post = new Post();
