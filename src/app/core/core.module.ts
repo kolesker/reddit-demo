@@ -1,12 +1,14 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 import { BaseLayoutComponent } from './components/base-layout/base-layout.component';
-import { TopPostsComponent } from '../top-posts/components/top-posts/top-posts.component';
+import { TopPostsModule } from '../top-posts/top-posts.module';
 
 
 @NgModule({
   imports: [
-    TopPostsComponent,
+    RouterModule,
+    TopPostsModule,
   ],
   declarations: [
     BaseLayoutComponent,
