@@ -1,12 +1,22 @@
 /* Colors */
-$dark-gray: #2f2f2f;
+$black: #000000;
+$cyan: #137fcc;
+$gray-dark: #252525;
+$gray-light: #a0a0a0;
+$orange-light: #ffa545;
 $white: #ffffff;
-$whitesmoke: #ffffff;
+$whitesmoke: #e4e4e4;
 
 $primary-bg-color: $white;
-$secondary-bg-color: $dark-gray;
+$secondary-bg-color: $gray-dark;
+$tertiary-bg-color: $black;
 
 $primary-title-color: $whitesmoke;
+
+$primary-text-color: $whitesmoke;
+$secondary-text-color: $orange-light;
+$tertiary-text-color: $cyan;
+$primary-subtext-color: $gray-light;
 
 
 /* Media Queries Breakpoint - Bootstrap based */

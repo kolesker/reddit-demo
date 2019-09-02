@@ -1,0 +1,91 @@
+@import 'src/app/core/styles/core-variables';
+
+$thumbnail-width: 84px;
+$thumbnail-height: 84px;
+
+.post {
+  padding: 0 .5rem;
+  background-color: $tertiary-bg-color;
+  color: $primary-text-color;
+
+  &__heading {
+    display: flex;
+    align-items: center;
+    padding: .25rem 0;
+  }
+
+  &__body {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  &__age {
+    font-size: .875rem;
+    color: $gray-light;
+    padding-left: .5rem;
+  }
+
+  &__author {
+    font-size: 1.125rem;
+    padding: 0 .5rem;
+  }
+
+  &__comments-count {
+    color: $secondary-text-color;
+    margin: 0 .5rem;
+  }
+
+  &__footer {
+    display: flex;
+    font-size: .875rem;
+  }
+
+  &__dismiss {
+    cursor: pointer;
+    display: flex;
+    margin-right: 3rem;
+  }
+
+  &__dismiss-icon {
+    border: 2px solid $secondary-text-color;
+    border-radius: 50%;
+    font-size: 1.25rem;
+    line-height: .7;
+    height: 22px;
+    width: 22px;
+    text-align: center;
+    color: $secondary-text-color;
+    margin-right: .5rem;
+  }
+
+  &__preview {
+    font-size: 2.5rem;
+    font-weight: 200;
+  }
+
+  &__thumbnail {
+    max-width: $thumbnail-width;
+    max-height: $thumbnail-height;
+  }
+
+  &__thumbnail-wrapper {
+    width: $thumbnail-width;
+    height: $thumbnail-height;
+    margin: 0;
+  }
+
+  &__title {
+    font-size: .875rem;
+    padding: 0 .5rem;
+  }
+
+  &__unread-mark {
+    background-color: $tertiary-text-color;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    align-self: flex-start;
+    margin: .25rem 0;
+  }
+}

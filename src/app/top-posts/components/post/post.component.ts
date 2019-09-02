@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+
+import { Post } from 'src/app/core/models';
 
 
 @Component({
@@ -8,5 +10,8 @@ import { Component } from '@angular/core';
 })
 
 export class PostComponent {
+
+  @Input() public post: Post = new Post();
+
   constructor() { }
 }
