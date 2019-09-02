@@ -1,9 +1,14 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 
+import { BaseLayoutComponent } from './components/base-layout/base-layout.component';
+
 
 @NgModule({
   imports: [],
-  declarations: []
+  declarations: [
+    BaseLayoutComponent,
+  ],
+  exports: [ BaseLayoutComponent ]
 })
 export class CoreModule {
   constructor(@Optional() @SkipSelf() parentModule: CoreModule) {
