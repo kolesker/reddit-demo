@@ -13,11 +13,13 @@ export class PostEffects {
 
   loadPosts$ = createEffect(() => this.actions$.pipe(
     ofType(TopPostsActions.loadPosts),
-    mergeMap(() => this.postService.getTopPosts().pipe(
-      map(posts => TopPostsActions.loadPostsSuccess(posts)),
+    mergeMap(() => this.postService.getTopPosts(this.postsAmount).pipe(
+      map(posts => TopPostsActions.loadPostsSuccess({ payload: posts })),
       catchError(() => of(TopPostsActions.loadPostsError))
     ))
   ));
+
+  private readonly postsAmount = 50;
 
   constructor(private actions$: Actions, private postService: PostService) {}
 }

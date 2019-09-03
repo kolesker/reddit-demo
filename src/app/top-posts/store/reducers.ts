@@ -4,14 +4,26 @@ import { Post } from 'src/app/core/models';
 
 export interface State {
   posts: Post[];
+  previewPost: { post: Post; index: number; };
 }
 
 export const initialState: State = {
   posts: [],
+  previewPost: undefined,
 };
 
 const _reducer = createReducer(
   initialState,
+  on(TopPostsActions.loadPostsSuccess, (state, { payload }) => ({ ...state, posts: payload })),
+  on(TopPostsActions.dismissPost, (state, { index }) => {
+    state.posts.splice(index, 1);
+    return { ...state, posts: [...state.posts] };
+  }),
+  on(TopPostsActions.clearAllPosts, state => ({ ...initialState })),
+  on(TopPostsActions.previewPost, (state, { index }) => {
+    state.posts[index] = new Post({...state.posts[index], unread: false });
+    return { ...state, posts: [...state.posts], previewPost: { post: state.posts[index], index } };
+  }),
 );
 
 export function reducer(state: State | undefined, action: Action) {
@@ -26,4 +38,9 @@ const _getTopPosts = createFeatureSelector<any, State>(featureKey);
 export const getTopPosts = createSelector(
   _getTopPosts,
   (state: State) => state.posts
+);
+
+export const getPreviewPost = createSelector(
+  _getTopPosts,
+  (state: State) => state.previewPost ? state.previewPost.post : undefined
 );

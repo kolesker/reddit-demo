@@ -4,7 +4,9 @@ export class Post {
   commentsCount: number = 0;
   thumbnailUrl: string = '';
   title: string = '';
-  unread: boolean = true;
+  unread?: boolean = true;
 
-  constructor() { }
+  constructor(params?: Post) {
+    if (params) Object.assign(this, params);
+  }
 }

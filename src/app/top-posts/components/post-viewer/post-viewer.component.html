@@ -1,0 +1,9 @@
+<div *ngIf="post" class="post-viewer p-3">
+  <h5>{{ post.author }}</h5>
+  <div class="mb-4 d-flex justify-content-center">
+    <figure class="m-0">
+      <img [src]="post.thumbnailUrl || ''" [alt]="post.title">
+    </figure>
+  </div>
+  <div>{{ post.title }}</div>
+</div>

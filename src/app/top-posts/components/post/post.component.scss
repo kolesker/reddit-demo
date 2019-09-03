@@ -17,7 +17,7 @@ $thumbnail-height: 84px;
   &__body {
     display: flex;
     align-items: center;
-    margin-bottom: 1rem;
+    margin-bottom: .5rem;
   }
 
   &__age {
@@ -67,9 +67,14 @@ $thumbnail-height: 84px;
   &__thumbnail {
     max-width: $thumbnail-width;
     max-height: $thumbnail-height;
+    font-size: .75rem;
+    overflow: hidden;
   }
 
   &__thumbnail-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: $thumbnail-width;
     height: $thumbnail-height;
     margin: 0;
@@ -78,6 +83,7 @@ $thumbnail-height: 84px;
   &__title {
     font-size: .875rem;
     padding: 0 .5rem;
+    flex: 1 0 0;
   }
 
   &__unread-mark {
@@ -87,5 +93,9 @@ $thumbnail-height: 84px;
     border-radius: 50%;
     align-self: flex-start;
     margin: .25rem 0;
+
+    &_visibility-hidden {
+      visibility: hidden;
+    }
   }
 }
