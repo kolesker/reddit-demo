@@ -15,7 +15,7 @@ export class PostService {
 
   public getTopPosts(limit?: number): Observable<any> {
     return this.apiService.getTopPosts(limit).pipe(
-      map(response => response.data.children.map(({ data }) => TypeConverter.ApiPostToPost(data)))
+      map(response => response.data.children.map(({ data }) => TypeConverter.apiPostToPost(data)))
     );
   }
 }
