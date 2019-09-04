@@ -7,6 +7,7 @@ export class TypeConverter {
     return new Post({
       age: TypeConverter.utcDateToRelativeTime(apiPost.created_utc * 1000),
       author: apiPost.author,
+      id: apiPost.id,
       commentsCount: apiPost.num_comments,
       thumbnailUrl: apiPost.thumbnail,
       title: apiPost.title,

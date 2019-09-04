@@ -3,6 +3,7 @@ import { RelativeTime } from './dates';
 export class Post {
   age: RelativeTime = { value: '', unit: '' };
   author: string = '';
+  id: string = '';
   commentsCount: number = 0;
   thumbnailUrl: string = '';
   title: string = '';

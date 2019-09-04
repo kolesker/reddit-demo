@@ -4,8 +4,13 @@
       <h5 class="posts-list__title">Reddit Posts</h5>
     </div>
     <div class="posts-list__content">
-      <ng-container *ngFor="let post of posts$ | async; index as i; last as isLast">
-        <app-post [post]="post" (click)="onPostClick(i)" (dismiss)="onDismissPost(i)"></app-post>
+      <ng-container *ngFor="let post of posts$ | async; index as i; last as isLast; trackBy: trackPosts">
+        <app-post @slideOutLeft
+                  class="d-block"
+                  [post]="post"
+                  (click)="onPostClick(i)"
+                  (dismiss)="onDismissPost(i)">
+        </app-post>
         <hr *ngIf="!isLast" class="posts-list__divider">
       </ng-container>
     </div>

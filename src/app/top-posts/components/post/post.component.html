@@ -1,4 +1,4 @@
-<article class="post">
+<article class="post" [@clicked]="clicked ? 'clicked' : ''" (@clicked.done)="clicked = false" (click)="clicked = true">
   <div class="post__heading">
     <div class="post__unread-mark" [ngClass]="{ 'post__unread-mark_visibility-hidden': !post.unread }"></div>
     <div class="post__author">{{ post.author }}</div>

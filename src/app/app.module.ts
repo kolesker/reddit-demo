@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -15,6 +16,7 @@ import { environment } from 'src/environments/environment';
   ],
   imports: [
     AppRoutingModule,
+    BrowserAnimationsModule,
     BrowserModule,
     CoreModule,
     StoreDevtoolsModule.instrument({

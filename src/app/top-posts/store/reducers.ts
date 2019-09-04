@@ -21,7 +21,7 @@ const _reducer = createReducer(
   }),
   on(TopPostsActions.clearAllPosts, state => ({ ...initialState })),
   on(TopPostsActions.previewPost, (state, { index }) => {
-    state.posts[index] = new Post({...state.posts[index], unread: false });
+    if (state.posts[index].unread) state.posts[index] = new Post({...state.posts[index], unread: false });
     return { ...state, posts: [...state.posts], previewPost: { post: state.posts[index], index } };
   }),
 );
