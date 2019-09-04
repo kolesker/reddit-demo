@@ -24,7 +24,7 @@ export class PostComponent {
   @Input() public post: Post = new Post();
   @Output() public dismiss: EventEmitter<undefined> = new EventEmitter();
 
-  public clickedState: boolean = false;
+  public clicked: boolean = false;
 
   constructor() { }
 
