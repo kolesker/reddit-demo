@@ -1,5 +1,5 @@
 <div class="top-posts">
-  <aside class="posts-list">
+  <aside class="posts-list" [ngClass]="{ 'posts-list_mobile-show': isSidebarShowed$ | async }">
     <div class="posts-list__heading">
       <h5 class="posts-list__title">Reddit Posts</h5>
     </div>
@@ -18,7 +18,7 @@
       <div class="posts-list__dismiss-all" (click)="onDismissAllClick()">Dismiss All</div>
     </div>
   </aside>
-  <section class="post-preview">
+  <section class="post-preview" (click)="onPreviewClick($event)">
     <app-post-viewer [post]="previewPost$ | async"></app-post-viewer>
   </section>
 </div>

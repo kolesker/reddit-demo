@@ -7,3 +7,5 @@ export const loadPostsError = createAction('[Top Posts] Load Posts Error');
 export const dismissPost = createAction('[Top Posts] Dismiss Post', props<{ index: number; }>());
 export const clearAllPosts = createAction('[Top Posts] Clear All Posts');
 export const previewPost = createAction('[Top Posts] Preview Post', props<{ index: number; }>());
+
+export const showSidebar = createAction('[Top Posts] Show Sidebar', props<{ show: boolean; }>());

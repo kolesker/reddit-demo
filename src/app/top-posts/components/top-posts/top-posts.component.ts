@@ -23,10 +23,14 @@ import { Post } from 'src/app/core/models';
 })
 export class TopPostsComponent implements OnInit {
 
+  public isSidebarShowed$: Observable<boolean>;
   public posts$: Observable<Post[]>;
   public previewPost$: Observable<Post>;
 
+  private readonly sidebarShowAreaWidth = 20; // px
+
   constructor(private store: Store<fromTopPosts.State>) {
+    this.isSidebarShowed$ = this.store.pipe(select(fromTopPosts.isSidebarShowed));
     this.posts$ = this.store.pipe(select(fromTopPosts.getTopPosts));
     this.previewPost$ = this.store.pipe(select(fromTopPosts.getPreviewPost));
   }
@@ -45,6 +49,11 @@ export class TopPostsComponent implements OnInit {
 
   public onPostClick(index: number): void {
     this.store.dispatch(TopPostsActions.previewPost({ index }));
+  }
+
+  public onPreviewClick(evt: MouseEvent): void {
+    const show = evt.clientX < this.sidebarShowAreaWidth;
+    this.store.dispatch(TopPostsActions.showSidebar({ show }));
   }
 
   public trackPosts(index: number, post: Post): string {
