@@ -1,5 +1,4 @@
-/* tslint:disable:component-selector*/
-import { DebugElement, Component } from '@angular/core';
+import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
 
 
@@ -22,9 +21,3 @@ export class TestingHelper {
     else el.triggerEventHandler('click', eventObj);
   }
 }
-
-@Component({ selector: 'app-base-layout', template: '' })
-export class BaseLayoutStubComponent { }
-
-@Component({ selector: 'router-outlet', template: '' })
-export class RouterOutletStubComponent { }

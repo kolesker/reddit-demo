@@ -1,8 +1,9 @@
+import { Component } from '@angular/core';
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 
 import { AppComponent } from './app.component';
-import { BaseLayoutStubComponent } from 'src/testing-helpers';
+
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -23,3 +24,6 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 });
+
+@Component({ selector: 'app-base-layout', template: '' })
+class BaseLayoutStubComponent { }

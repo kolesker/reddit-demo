@@ -1,8 +1,8 @@
-import { DebugElement } from '@angular/core';
+import { DebugElement, Component } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BaseLayoutComponent } from './base-layout.component';
-import { TestingHelper, RouterOutletStubComponent } from 'src/testing-helpers';
+import { TestingHelper } from 'src/testing-helpers';
 
 
 describe('BaseLayoutComponent', () => {
@@ -39,3 +39,7 @@ describe('BaseLayoutComponent', () => {
   });
 });
 
+
+/* tslint:disable:component-selector*/
+@Component({ selector: 'router-outlet', template: '' })
+class RouterOutletStubComponent { }
